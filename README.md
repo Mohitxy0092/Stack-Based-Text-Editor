@@ -1,4 +1,4 @@
-# Stack-Based Text Editor
+# Stack Based Text Editor
 
 A lightweight, browser-based text editor built with HTML, Tailwind CSS, and JavaScript. It features a custom stack for undo functionality and a real-time log of editing operations, perfect for exploring text manipulation, DOM interactions, and stack Data Structure.
 
@@ -30,7 +30,7 @@ text-editor/
 ## Getting Started
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Mohitxy0092/text-editor.git
+   git clone https://github.com/Mohitxy0092/Stack-Based-Text-Editor.git
    cd text-editor
    ```
 2. Open `index.html` in your browser.
