@@ -9,10 +9,8 @@ A lightweight, browser-based text editor built with HTML, Tailwind CSS, and Java
 - **Operation History**: Track edits visually in a log panel.
 - **Batched Undo**: Groups characters (default: 7) for intuitive undos.
 - **Responsive UI**: Sleek, mobile-friendly design with Tailwind CSS.
-
-## Preview
-![Stack-Based Text Editor UI](./images/Screenshot%202025-06-25%20220658.png)
-
+## Live Demo:
+[Click to watch demo]([https://stack-based-text-editor.vercel.app/])
 ## Tech Stack
 - **HTML5**: Core structure and layout.
 - **Tailwind CSS**: Responsive styling.
