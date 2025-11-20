@@ -1,47 +1,45 @@
 export class Stack {
-  constructor() {
+  constructor(buffer = 7) {
     this.size = 0;
-    this.buffer = 7;
+    this.buffer = buffer;
     this.stack = [];
   }
-
   clear() {
     this.size = 0;
-    this.stack = [];
+    this.stack.length = 0;
   }
-
   isEmpty() {
     return this.size === 0;
   }
-
   top() {
-    return this.stack[this.size - 1];
+    return this.isEmpty() ? null : this.stack[this.size - 1];
   }
-
   pop() {
-    if (!this.isEmpty()) {
-      this.size--;
-      return this.stack.pop();
-    } else {
-      return null;
-    }
+    if (this.isEmpty()) return null;
+    this.size--;
+    return this.stack.pop();
   }
-
   push(type, char) {
+    if (type !== 0 && type !== 1) {
+      throw new Error('Stack.push: unknown type ' + type);
+    }
+    char = String(char ?? '');
+
     if (this.isEmpty()) {
       this.stack.push([type, char]);
       this.size++;
-    } else {
-      let tmp = this.top();
-      if (tmp[0] === type && tmp[1].length < this.buffer) {
-        let top = this.pop();
-        top[1] = char + top[1];
-        this.stack.push(top);
-        this.size++;
+      return;
+    }
+    const tmp = this.top();
+    if (tmp[0] === type && tmp[1].length < this.buffer) {
+      if (type === 0) {
+        tmp[1] = tmp[1] + char;
       } else {
-        this.stack.push([type, char]);
-        this.size++;
+        tmp[1] = char + tmp[1];
       }
+    } else {
+      this.stack.push([type, char]);
+      this.size++;
     }
   }
 }
